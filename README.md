@@ -59,3 +59,13 @@ ASC_KEY_ID=… ASC_ISSUER_ID=… ASC_KEY_PATH=… ./install.sh
 ## 字庫來源
 
 選字順序照 Windows XP 舊注音（ㄅ半）的字表 `phon.tbl`、`phonptr.tbl`、`phoncode.tbl`，只收 Big5 字；聯想詞照 Windows 的相關字詞表 `lcphrase.tbl`、`lcptr.tbl`。
+
+## 授權
+
+程式碼採用 [PolyForm Noncommercial 1.0.0](LICENSE) 授權：
+
+- 可以：自己使用、修改、分享給別人，個人、學校、公益團體使用都可以。
+- 要做到：分享或發布時，附上授權條款和「Copyright 2026 WayneSan」這行版權聲明。
+- 不可以：拿去賣錢，或放進任何收費的產品、服務裡。想做商業用途，要先經過作者同意。
+
+`Resources/zhuyin.json`（字表）和 `Resources/assoc.json`（聯想詞）是從微軟 Windows 輸入法的檔案整理出來的，版權屬於 Microsoft，不在上面的授權範圍內。
