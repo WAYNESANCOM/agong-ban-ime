@@ -69,3 +69,21 @@ ASC_KEY_ID=… ASC_ISSUER_ID=… ASC_KEY_PATH=… ./install.sh
 - 不可以：拿去賣錢，或放進任何收費的產品、服務裡。想做商業用途，要先經過作者同意。
 
 `Resources/zhuyin.json`（字表）和 `Resources/assoc.json`（聯想詞）是從微軟 Windows 輸入法的檔案整理出來的，版權屬於 Microsoft，不在上面的授權範圍內。
+
+## 作者的其他作品
+
+我是 Wayne，一個人用 AI 做 App 和網站。更多作品在 [waynemvrs.com](https://waynemvrs.com/zh-TW/)。
+
+- [江戸 Edo Period](https://edoperiod.com/)：走進德川幕府的都城，用自己的腳步漫遊 3D 江戶。
+- [旅次 Rojico](https://rojico.com/)：自主規劃日本自由行，把每段旅程留下來。
+- [日嗑 RIKEE](https://rikee.jp/)：從五十音到日語對話，讓學習接上生活。
+- [戦国浮世](https://sengokuukiyo.jp/)：雨落澀谷，醒在永祿。在這亂世，重活一次。
+- [Kyudo Global](https://kyudoglobal.jp/)：陪你記錄、觀察與累積每一次弓道稽古。
+- [MangaGenAI](https://mangagenai.com/)：把故事、角色與照片，變成自己的創作。
+- [方舟 ArkLife](https://arklife.app/)：先讀故事，再住進人生。
+- [如言 Jogen](https://jogenapp.com/)：跟著角色，把外語說進日常。
+- [COSMOS](https://cosmos.waynemvrs.com/)：活動前找場次，現場交換名片，回家整理照片。
+- [平安少 SafePing](https://safeping.waynemvrs.com/)：用報平安倒數，為緊急時刻多留一條聯絡途徑。
+- [Rinoken](https://rinoken.app/)：從外部看見自己，把動作的判斷留給你。
+- [住処 Sumika](https://sumika.waynemvrs.com/)：上傳房源圖，看懂日本租屋與生活資訊。
+- [WayneMVRS 影視誌](https://waynesan.com/)：韓劇、電影、日劇、台劇、動畫、綜藝、紀錄片、旅遊。
