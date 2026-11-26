@@ -1,0 +1,16 @@
+#!/bin/zsh
+# 安裝完：關掉舊的輸入法程序；移除同一個人以前用原始碼裝在個人資料夾的那份，避免兩份打架；
+# 再以目前登入的使用者身分登記並啟用輸入法
+APP="/Library/Input Methods/BopomofoHalf.app"
+LSR=/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister
+pkill -x BopomofoHalf 2>/dev/null
+USER_NAME=$(stat -f%Su /dev/console)
+USER_ID=$(id -u "$USER_NAME")
+USER_HOME=$(dscl . -read "/Users/$USER_NAME" NFSHomeDirectory | awk '{print $2}')
+OLD="$USER_HOME/Library/Input Methods/BopomofoHalf.app"
+if [[ -d "$OLD" ]]; then
+  launchctl asuser "$USER_ID" sudo -u "$USER_NAME" "$LSR" -u "$OLD"
+  rm -rf "$OLD"
+fi
+launchctl asuser "$USER_ID" sudo -u "$USER_NAME" "$APP/Contents/MacOS/BopomofoHalf" install
+exit 0
