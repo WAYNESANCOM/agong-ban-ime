@@ -24,6 +24,8 @@
 
 到 [Releases](https://github.com/WAYNESANCOM/agong-ban-ime/releases/latest) 下載最新的 `BopomofoHalf-版本.pkg`，雙擊照畫面安裝（需要輸入電腦密碼）。裝完請登出再登入，然後到選單列的輸入法選單點「ㄅ半注音」。安裝檔已用 Apple Developer ID 簽章並通過公證。
 
+之後更新版本，也請登出再登入一次。沒有重新登入的話，Finder 這類一直開著的 App 會連不上新版的輸入法，例如在 Finder 改檔名時打不出字。這時登出再登入，或在 Dock 上按住 `Option` 鍵、對 Finder 按右鍵選「重新開啟」就好。
+
 ## 從原始碼安裝
 
 需要 macOS 13 以上和 Xcode（只用到 `swiftc`）。
