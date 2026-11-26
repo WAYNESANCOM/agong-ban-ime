@@ -16,6 +16,8 @@ final class InputController: IMKInputController {
     private var lastCaret: NSRect?
     // 數字列 1~9 的 keyCode，聯想詞用 Shift+數字選
     private static let digitKeyCodes: [UInt16: Int] = [18: 1, 19: 2, 20: 3, 21: 4, 23: 5, 22: 6, 26: 7, 28: 8, 25: 9]
+    // 右邊數字鍵盤的 0~9 和 . * + / - =（不含 Enter）
+    private static let keypadKeyCodes: Set<UInt16> = [82, 83, 84, 85, 86, 87, 88, 89, 91, 92, 65, 67, 69, 75, 78, 81]
 
     override func recognizedEvents(_ sender: Any!) -> Int {
         Int(NSEvent.EventTypeMask([.keyDown, .keyUp, .flagsChanged]).rawValue)
@@ -102,6 +104,16 @@ final class InputController: IMKInputController {
         if event.keyCode == 49 && flags.contains(.shift) {   // Shift+空白
             InputController.fullWidth.toggle()
             CandidateWindow.shared.flash(InputController.fullWidth ? "全形" : "半形", near: caretRect(client))
+            return true
+        }
+        // 跟以前的ㄅ半一樣：右邊數字鍵盤直接打數字和運算符號，不當成注音
+        if InputController.chinese, !flags.contains(.capsLock), InputController.keypadKeyCodes.contains(event.keyCode),
+           let s = event.characters, s.count == 1 {
+            switch engine.literal(s, fullWidth: InputController.fullWidth) {
+            case .commit(let out): commit(out, client: client)
+            case .beep: NSSound.beep()
+            default: break
+            }
             return true
         }
         // 跟以前的ㄅ半一樣：注音模式下按住 Shift 加字母打英文，大寫鎖定燈亮是大寫、沒亮是小寫
